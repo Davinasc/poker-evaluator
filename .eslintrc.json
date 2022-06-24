@@ -1,0 +1,68 @@
+{
+  "root": true,
+  "env": { "browser": true, "es2021": true, "node": true },
+  "extends": [
+    "react-app",
+
+    "airbnb",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:jsx-a11y/recommended",
+
+    // ESLint
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+
+    // Prettier plugin and recommended rules
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": { "jsx": true }
+  },
+  "plugins": ["prettier", "@typescript-eslint", "react-hooks", "react"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
+    "import/extensions": "off",
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": ["error", { "custom": "ignore" }],
+    "prettier/prettier": ["error", {}, { "usePrettierrc": true }],
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "no-restricted-imports": [
+      "error",
+      { "patterns": ["@mui/*/*/*", "!@mui/material/test-utils/*"] }
+    ],
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "import/no-named-as-default": "off",
+    "import/prefer-default-export": "off",
+    "sort-imports": [
+      "error",
+      { "allowSeparatedGroups": true, "ignoreDeclarationSort": true }
+    ],
+    "no-plusplus": "off",
+    "no-continue": "off",
+    "no-promise-executor-return": "off"
+  },
+  "settings": {
+    "react": { "version": "detect" },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {},
+      "alias": {
+        "map": [["@app", "./src"]],
+        "extensions": [".ts", ".tsx"]
+      }
+    }
+  }
+}
